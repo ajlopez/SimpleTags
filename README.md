@@ -1,6 +1,6 @@
 # SimpleTags
 
-Simple declarativ HTML DSL, inspired by (Deklarativna)[https://github.com/dlitvakb/deklarativna].
+Simple declarative HTML DSL, inspired by (Deklarativna)[https://github.com/dlitvakb/deklarativna].
 
 ## Installation
 
