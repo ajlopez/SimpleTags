@@ -21,4 +21,9 @@ assert.equal(div({id: 'content', "class": 'row'},"My content"), "<div id='conten
 assert.equal(br({id: 'break'}), "<br id='break' />");
 
 // Simple DIV with array content
+
 assert.equal(div(['Hello,', ' World']), "<div>Hello, World</div>");
+
+// Simple comment
+
+assert.equal(comment('This is a secret'), "<!--This is a secret-->");
