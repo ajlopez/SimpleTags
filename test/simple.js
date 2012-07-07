@@ -16,3 +16,8 @@ assert.equal(st.h2("Main"), "<h2>Main</h2>");
 
 assert.equal(st.div({id: 'content', "class": 'row'},"My content"), "<div id='content' class='row'>My content</div>");
 
+// Simple BR with style
+
+assert.equal(st.br({id: 'break'}), "<br id='break' />");
+
+
