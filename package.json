@@ -1,0 +1,16 @@
+{ "name": "simpletags"
+, "description": "Simple DSL for HTML pages in Javascript/Node.js"
+, "keywords": [ "dsl", "html", "nodejs", "javascript" ]
+, "version": "0.0.1alpha"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleTags.git" }
+, "main": "./lib/simpletags.js"
+, "engines": { "node": ">= 0.6.0 && < 0.9.0" }
+, "scripts": {
+    "test": "node ./test.js"
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+  }
+}
