@@ -1,6 +1,6 @@
 # SimpleTags
 
-Simple declarative HTML DSL, inspired by (Deklarativna)[https://github.com/dlitvakb/deklarativna].
+Simple engine to manage items, with arbitrary data and associated tags.
 
 ## Installation
 

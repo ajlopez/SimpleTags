@@ -1,5 +1,5 @@
 { "name": "simpletags"
-, "description": "Simple DSL for HTML pages in Javascript/Node.js"
+, "description": "Simple engine to manage items, with arbitrary data and associated tags"
 , "keywords": [ "dsl", "html", "nodejs", "javascript" ]
 , "version": "0.0.1alpha"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
