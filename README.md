@@ -60,6 +60,10 @@ TBD
 - Remove an item.
 - Better internal tag structure and search algorithm.
 
+## Changelog
+
+- 2013-01-15: Version 0.0.1 published, with createEngine, createItem, getItemById, getItems.
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/SimpleTags) and submit
