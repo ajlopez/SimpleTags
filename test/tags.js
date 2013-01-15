@@ -33,3 +33,19 @@ assert.deepEqual(items[0], { id: itemId, data: 'contract.doc', tags: [{ author: 
 var items = engine.getItems([ { author: 'adam' }, { date: '2013-01-13' } ]);
 assert.ok(items);
 assert.equal(items.length, 0);
+
+// Retrieve Items with Object Tags
+
+var items = engine.getItems([ { author: 'adam' } ]);
+assert.ok(items);
+assert.equal(items.length, 1);
+assert.deepEqual(items[0], { id: itemId, data: 'contract.doc', tags: [{ author: 'adam' }, { date: '2013-01-14' }] });
+
+// Create and Retrieve item with two Author tags
+
+var itemId = engine.createItem( 'eden.doc', [ { author: 'adam' }, { author: 'eve' } ]);
+assert.ok(itemId);
+var items = engine.getItems([ { author: 'adam' }, { author: 'eve' } ]);
+assert.ok(items);
+assert.equal(items.length, 1);
+assert.deepEqual(items[0], { id: itemId, data: 'eden.doc', tags: [ { author: 'adam' }, { author: 'eve' } ] });
