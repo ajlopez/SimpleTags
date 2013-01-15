@@ -18,7 +18,37 @@ var simpletags = require('simpletags');
 
 ## Usage
 
-TBD
+Create engine
+```js
+var engine = simpletags.createEngine();
+```
+
+Create item in engine:
+```js
+var itemId = engine.createItem('http://nodejs.org', [ 'nodejs', 'javascript', 'engine', 'programming' ]);
+```
+An item has
+- `data`: Arbitrary value you supplied
+- `tags`: An array of tags. A tag could be a non-empty string or an object with only one property with non-empty value.
+
+Once created, the item has an associated id, supplied by the engine.
+
+An example with object and string tags:
+```js
+var itemId = engine.createItem('contract.doc', [ 'legal', 'document', { author: 'adam' } ]);
+```
+
+Search items by tags:
+```js
+var items = engine.getItems([ 'nodejs', 'javascript', 'engine', 'programming' ]);
+```
+The return value is an array of items. Each item is a simple object with `id`, `data`, and `tags` properties.
+
+Get item by id:
+```js
+var item = engine.getItemById(itemId);
+```
+The return value is a simple object, with `id`, `data`, and `tags` properties.
 
 ## Samples
 
@@ -26,7 +56,9 @@ TBD
 
 ## To do
 
-TBD
+- Update an item.
+- Remove an item.
+- Better internal tag structure and search algorithm.
 
 ## Contribution
 
@@ -36,6 +68,3 @@ welcome.
 
 If you submit a pull request, please be sure to add or update corresponding
 test cases, and ensure that `npm test` continues to pass.
-
-(Thanks to [JSON5](https://github.com/aseemk/json5) by [aseemk](https://github.com/aseemk). 
-This file is based on that project README.md).
