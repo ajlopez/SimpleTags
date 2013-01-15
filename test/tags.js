@@ -13,6 +13,14 @@ var item = engine.getItemById(itemId);
 assert.ok(item);
 assert.deepEqual(item, { id: itemId, data: 'contract.doc', tags: [{ author: 'adam' }, { date: '2013-01-14' }] });
 
+// Create Item with Object as Tag
+
+var itemId2 = engine.createItem('contract2.doc', { author: 'eve', date: '2013-01-10' });
+assert.ok(itemId2);
+var item = engine.getItemById(itemId2);
+assert.ok(item);
+assert.deepEqual(item, { id: itemId2, data: 'contract2.doc', tags: [{ author: 'eve' }, { date: '2013-01-10' }] });
+
 // Retrieve Items with Object Tags
 
 var items = engine.getItems([ { author: 'adam' } ]);
