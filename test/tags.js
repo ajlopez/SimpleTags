@@ -20,3 +20,8 @@ assert.ok(items);
 assert.equal(items.length, 1);
 assert.deepEqual(items[0], { id: itemId, data: 'contract.doc', tags: [{ author: 'adam' }, { date: '2013-01-14' }] });
 
+// Empty Items with Object Tags
+
+var items = engine.getItems([ { author: 'adam' }, { date: '2013-01-13' } ]);
+assert.ok(items);
+assert.equal(items.length, 0);
