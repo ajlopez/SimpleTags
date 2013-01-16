@@ -63,6 +63,7 @@ TBD
 ## Changelog
 
 - 2013-01-15: Version 0.0.1 published, with createEngine, createItem, getItemById, getItems.
+- 2013-01-16: Version 0.0.2 started in master.
 
 ## Contribution
 
