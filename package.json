@@ -5,12 +5,13 @@
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
 , "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleTags.git" }
 , "main": "./lib/simpletags.js"
-, "engines": { "node": ">= 0.6.0 && < 0.9.0" }
+, "engines": { "node": ">= 0.6.0 && < 0.13.0" }
 , "scripts": {
-    "test": "node ./test.js"
+    "test": "simpleunit ./test"
   }
 , "dependencies": {
   }
 , "devDependencies": {
+    "simpleunit": "0.0.6"
   }
 }

@@ -1,36 +1,40 @@
 
-var simpletags = require('..'),
-    assert = require('assert');
+var simpletags = require('..');
 
-// Create Engine
+var engine;
+var itemId;
 
-var engine = simpletags.createEngine();
+exports['create engine'] = function (test) {
+    engine = simpletags.createEngine();
+    test.ok(engine);
+    test.done();
+}
 
-assert.ok(engine);
+exports['create item'] = function (test) {
+    itemId = engine.createItem('http://nodejs.org', ['nodejs', 'javascript', 'programming']);
+    test.ok(itemId);
+    test.done();
+}
 
-// Create Item
+exports['get item by id'] = function (test) {
+    var item = engine.getItemById(itemId);
 
-var itemId = engine.createItem('http://nodejs.org', ['nodejs', 'javascript', 'programming']);
-assert.ok(itemId);
+    test.ok(item);
+    test.deepEqual(item, { id: itemId, data: 'http://nodejs.org', tags: ['nodejs', 'javascript', 'programming'] });
+    test.done();
+}
 
-// Get Item by id
+exports['get items by tags'] = function (test) {
+    var items = engine.getItems(['javascript']);
 
-var item = engine.getItemById(itemId);
+    test.ok(items);
+    test.equal(items.length, 1);
+    test.deepEqual(items[0], { id: itemId, data: 'http://nodejs.org', tags: ['nodejs', 'javascript', 'programming'] });
+}
 
-assert.ok(item);
-assert.deepEqual(item, { id: itemId, data: 'http://nodejs.org', tags: ['nodejs', 'javascript', 'programming'] });
-
-// Get items by tags
-
-var items = engine.getItems(['javascript']);
-
-assert.ok(items);
-assert.equal(items.length, 1);
-assert.deepEqual(items[0], { id: itemId, data: 'http://nodejs.org', tags: ['nodejs', 'javascript', 'programming'] });
-
-// Get empty items
-
-var items = engine.getItems(['noitem']);
-assert.ok(items);
-assert.equal(items.length, 0);
-
+exports['get empty items'] = function (test) {
+    var items = engine.getItems(['noitem']);
+    test.ok(items);
+    test.equal(items.length, 0);
+    test.done();
+}
